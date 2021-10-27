@@ -1,0 +1,67 @@
+@import "./../../sassStyles/palette.scss";
+@import "./../../sassStyles/mixins";
+@import "./../../sassStyles/mediaQueries";
+
+.Home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include height-width(200vh, 100vw);
+
+  &__background_img {
+    position: absolute;
+    z-index: -10;
+    @include height-width(100vh, 100vw);
+
+    @include query-phone {
+      background-image: url("./../../media/mobile_background.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+    }
+  }
+
+  &__sheer {
+    position: fixed;
+    top: 0px;
+    z-index: -1;
+    @include height-width(100vh, 100vw);
+    background-color: $sheerGreen;
+  }
+
+  &__gradient {
+    position: fixed;
+    top: 0px;
+    z-index: -5;
+    @include height-width(30vh, 100vw);
+    background-image: $blackGradient;
+    
+  }
+}
+
+.Store {
+  @include height-width(100vh, 100vw);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh 0vh 0vh 0vh;
+    @include height-width(90vh, 100vw);
+  }
+
+  &__carousel {
+    @include height-width(28vh, 100vw);
+  }
+
+  &__itemGrid {
+    margin: 2vh 0vh;
+    @include height-width(58vh, 100vw);
+  }
+}
+.booster {
+  height: 150vh;
+  width: 100vw;
+  border: 1px solid green;
+}

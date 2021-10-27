@@ -1,0 +1,25 @@
+@import "./../../sassStyles/mediaQueries";
+@import "./../../sassStyles//mixins";
+@import "./../../sassStyles/palette";
+@import "./../../sassStyles/variables";
+@import "./../../sassStyles/typography";
+
+.NavBar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  @include height-width(10vh, 100vw);
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+
+  &__home {
+    @include font-thin($white, 1rem);
+  }
+}
+
+.right1 {
+  margin: 0px 20px 0px 0px;
+}
