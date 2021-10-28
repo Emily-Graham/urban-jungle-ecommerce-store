@@ -13,7 +13,7 @@
   &__backgroundImage {
     position: absolute;
     top: 0px;
-    z-index: -1;
+    z-index: -10;
     @include height-width(100vh, 100vw);
     background-image: url("./../../media/mobile_background.png");
     background-position: center;
@@ -25,7 +25,7 @@
   &__sheer {
     position: absolute;
     top: 0px;
-    z-index: -1;
+    z-index: -9;
     @include height-width(100vh, 100vw);
     background-color: $sheerGreen;
   }
@@ -34,13 +34,14 @@
     box-sizing: border-box;
     position: fixed;
     top: 0px;
+    z-index: -1;
     @include height-width(80vh, 100vw);
     background-color: #c9c9c9;
   }
 
   &__imgWindow {
     box-sizing: border-box;
-    position: fixed;
+    position: relative;
     top: 0px;
     display: flex;
     flex-direction: column;
@@ -55,7 +56,6 @@
     background-image: $blackGradient;
 
     &_2 {
-      
       display: flex;
       align-items: flex-end;
       @include height-width(15vh, 100vw);
@@ -69,12 +69,44 @@
   }
 
   &__productInformation {
-    position: absolute;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    @include height-width(22vh, 100vw);
+    background-color: $white;
+  }
+
+  &__status {
+    @include font-emphasis($sale, 0.8rem);
+  }
+
+  &__text {
+    margin: 5px 0px 0px 0px;
+    @include font-regular($black, 0.8rem);
+  }
+
+  &__price {
+    margin: 0px;
+    @include font-emphasis($black, 1.2rem);
+  }
+
+  &__spanBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px 0px 0px;
+  }
+
+  &__buttonBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__button {
     background-color: $button;
-    @include height-width(40px, 100%);
+    margin: 0px 0px 0px 10px;
+    @include height-width(25px, 100px);
     @include font-regular($white, 0.8rem);
     border: none;
     border-radius: 5px;

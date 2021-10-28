@@ -14,7 +14,7 @@ const Product = () => {
   const favourite = true;
   const image = "image";
   const productId = "22";
-  const productStatus = "SALE";
+  const productStatus = "Sale";
   const size = "23cm";
   const description = "yup yup";
   const displayPrice = `$${ price }`;
@@ -41,14 +41,16 @@ const Product = () => {
 
       <NavBar id={ productId }/>
 
-      <div id="productInformation">
-        <p>{ productStatus }</p>
-        <p>{ size }</p>
-        <p>{ description }</p>
-        <span>
-          <p>{ displayPrice }</p>
-          { favouriteIcon }
-          <button className={ styles.Product__button }>Add to Cart</button>
+      <div id="productInformation" className={ styles.Product__productInformation }>
+        <p className={ styles.Product__status }>{ productStatus.toUpperCase() }</p>
+        <p className={ styles.Product__text }>{ size }</p>
+        <p className={ styles.Product__text }>{ description }</p>
+        <span className={ styles.Product__spanBar }>
+          <p className={ styles.Product__price }>{ displayPrice }</p>
+          <div className={ styles.Product__buttonBar } >
+            { favouriteIcon }
+            <button className={ styles.Product__button }>Add to Cart</button> 
+          </div>
         </span>
       </div> 
     </div>
