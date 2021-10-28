@@ -2,6 +2,11 @@
 @import "./../../sassStyles/mixins";
 @import "./../../sassStyles/mediaQueries";
 
+.hell {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+}
 .Home {
   position: relative;
   display: flex;
@@ -10,7 +15,7 @@
   @include height-width(200vh, 100vw);
 
   &__background_img {
-    position: absolute;
+    position: fixed;
     z-index: -10;
     @include height-width(100vh, 100vw);
 
@@ -38,30 +43,38 @@
     background-image: $blackGradient;
     
   }
+
+  &__landingPageSpace {
+    @include height-width(35vh, 100vw);
+  }
 }
 
 .Store {
+  position: absolute;
+  bottom: 0px;
   @include height-width(100vh, 100vw);
 
-  &__content {
+  &__featureContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10vh 0vh 0vh 0vh;
-    @include height-width(90vh, 100vw);
-  }
-
-  &__carousel {
-    @include height-width(28vh, 100vw);
+    @include height-width(26vh, 100vw);
   }
 
   &__itemGrid {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 2vh 0vh;
-    @include height-width(58vh, 100vw);
+    padding: 15px;
+    @include height-width(60vh, 100vw);
+    background-color: $white;
+
+    &_container {
+      @include height-width(100%, 100%);
+      border: 1px solid yellow;
+    }
   }
-}
-.booster {
-  height: 150vh;
-  width: 100vw;
-  border: 1px solid green;
 }

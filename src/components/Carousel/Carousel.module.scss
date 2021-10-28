@@ -1,0 +1,8 @@
+@import "./../../sassStyles/palette.scss";
+@import "./../../sassStyles/mixins";
+@import "./../../sassStyles/mediaQueries";
+
+.Carousel {
+  @include height-width(100%, 100%);
+  border: 1px solid red;
+}

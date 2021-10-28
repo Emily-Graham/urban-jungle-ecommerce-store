@@ -2,7 +2,7 @@ import styles from './Carousel.module.scss';
 
 const Carousel = () => {
   return (
-    <div>
+    <div className={ styles.Carousel }>
       
     </div>
   )

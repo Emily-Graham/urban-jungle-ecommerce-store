@@ -5,20 +5,15 @@
 @import "./../../sassStyles/variables";
 
 .searchBar {
-  &__container {
+  &__form {
     display: flex;
     flex-direction: row;
     position: relative;
-    @include height-width(35px, 60vw);
     max-width: 700px;
-    background-color: $solidGreen;
+    background-color: $sheerestGreen;
     border-radius: 15px;
-
-  }
-
-  &__form {
-    display: flex;
-    @include height-width(100%, 100%);
+    margin: 0px 0px 15px 0px;
+    @include height-width(35px, 75vw);
   }
 
   &__search-button-container {
@@ -31,13 +26,13 @@
   &__select {
     display: flex;
     justify-content: center;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 10px;
     @include height-width(100%, auto);
     min-width: 25%;
-    @include font-regular($white, 1rem);
+    @include font-thin($white, 0.8rem);
     @include color-background($white, $solidGreen);
     border: none;
-    border-radius: 15px;
+    border-radius: 15px 0px 0px 15px;
 
     &:focus-visible {
       outline: none;
@@ -48,10 +43,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 10px;
     @include height-width(100%, 100%);
-    @include font-regular($lightBlack, 1rem);
-    @include color-background($white, transparent);border: none;
+    @include font-thin($white, 0.8rem);
+    @include color-background($white, transparent);
+    border: none;
+
+    &::placeholder {
+      color: $sheerGreen;
+    }
+
+    &::-ms-input-placeholder {
+      color: $sheerGreen;
+    }
 
     &:focus-visible {
       outline: none;
@@ -59,14 +63,16 @@
   }
 
   &__submit {
-    padding: 0px 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     @include height-width(100%, auto);
-    @include color-background(transparent, transparent);
+    @include color-background(transparent, $solidGreen);
     border: none;
-    border-radius: 15px;
+    border-radius: 0px 15px 15px 0px;
   }
 
   &__icon {
-    @include height-width(20px, 20px);
+    @include height-width(10px, 10px);
   }
 }

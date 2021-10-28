@@ -1,9 +1,14 @@
-.feature_title {
+.Feature_title {
   position: sticky;
   position: -webkit-sticky;
-  top: 2vh;
-  margin: 2vh 0vh;
-  min-height: 6vh; //navbar is 10vh
-  max-height: 18vh;
+  top: -4vh;
+  z-index: 2;
+  height: 18vh;
   width: auto;
+  transition: transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+
+  &__small {
+    transform: scale(0.33);
+  }
 }
