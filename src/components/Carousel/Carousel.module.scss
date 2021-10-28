@@ -3,6 +3,7 @@
 @import "./../../sassStyles/mediaQueries";
 
 .Carousel {
+  box-sizing: border-box;
   @include height-width(100%, 100%);
   border: 1px solid red;
 }

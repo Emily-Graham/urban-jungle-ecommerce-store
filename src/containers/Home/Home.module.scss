@@ -31,8 +31,14 @@
     position: fixed;
     top: 0px;
     z-index: -1;
-    @include height-width(100vh, 100vw);
-    background-color: $sheerGreen;
+    @include height-width(100vh, 100vw);transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    background-color: $invisibleGreen;
+
+    &_visible  {
+      background-color: $sheerGreen;
+    }
   }
 
   &__gradient {
@@ -41,7 +47,6 @@
     z-index: -5;
     @include height-width(30vh, 100vw);
     background-image: $blackGradient;
-    
   }
 
   &__landingPageSpace {

@@ -1,0 +1,67 @@
+@import "./../../sassStyles/palette.scss";
+@import "./../../sassStyles/mixins";
+@import "./../../sassStyles/mediaQueries";
+@import "./../../sassStyles/typography";
+
+.Cart {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+
+  &__background_img {
+    position: fixed;
+    top: 0px;
+    z-index: -10;
+    @include height-width(100vh, 100vw);
+
+    @include query-phone {
+      background-image: url("./../../media/mobile_background.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+    }
+  }
+
+  &__sheer {
+    position: fixed;
+    top: 0px;
+    z-index: -1;
+    @include height-width(100vh, 100vw);
+    background-color: $sheerGreen;
+  }
+
+  &__ItemContainer {
+    box-sizing: border-box;
+    max-height: 90vh;
+    @include height-width(65vh, 100vw);
+    background-color: $sheerWhite;
+    border: 1px solid blue;
+  }
+
+  &__title {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    @include height-width(10vh, 100vw);
+    @include font-regular($white, 1.8rem);
+  }
+
+  &__favBar {
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 15px 0px;
+    @include height-width(25vh, 100vw);
+    @include font-regular($white, 0.8rem);
+
+    &_heading {
+      margin: 10px 0px;
+    }
+  }
+}
