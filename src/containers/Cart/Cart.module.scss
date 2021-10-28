@@ -3,6 +3,11 @@
 @import "./../../sassStyles/mediaQueries";
 @import "./../../sassStyles/typography";
 
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 .Cart {
 
   display: flex;
@@ -33,11 +38,21 @@
   }
 
   &__ItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-end;
     box-sizing: border-box;
+    padding: 15px;
     max-height: 90vh;
     @include height-width(65vh, 100vw);
     background-color: $sheerWhite;
     border: 1px solid blue;
+  }
+
+  &__items {
+    @include height-width(35vh, 100%);
+    border: 1px solid purple;
   }
 
   &__title {
@@ -48,6 +63,64 @@
     margin: 0px;
     @include height-width(10vh, 100vw);
     @include font-regular($white, 1.8rem);
+  }
+
+  &__tallyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include height-width(150px, 160px);
+  }
+
+  &__tallySection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px 0px 0px;
+    width: 100%;
+
+    &_price {
+      margin: 0px 0px 5px 0px;
+      border-bottom: 1px solid $white;
+    }
+
+    &_shipping {
+      @include font-regular($white, 0.8rem);
+    }
+
+    &_total {
+      @include font-emphasis($white, 1rem);
+    }
+  }
+
+
+  &__couponInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include height-width(25px, 65%);
+    @include font-regular($solidGreen, 0.8rem);
+    background-color: $sheerWhite;
+    border-radius: 20px;
+  }
+
+  &__couponButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include height-width(25px, 30%);
+    @include font-regular($white, 0.8rem);
+    background-color: $solidGreen;
+    border: none;
+    border-radius: 5px;
+  }
+
+  &__purchaseButton {
+    background-color: $button;
+    @include height-width(40px, 100%);
+    @include font-regular($white, 1rem);
+    border: none;
+    border-radius: 5px;
   }
 
   &__favBar {
