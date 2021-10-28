@@ -5,6 +5,7 @@ import Carousel from '../../components/Carousel';
 import SearchBar from "./../../components/SearchBar";
 import ItemGridCards from "./../../components/ItemGridCards";
 import { useState } from "react";
+import { Hashlink, NavHashLink } from "react-router-hash-link";
 
 const Home = () => {
 
