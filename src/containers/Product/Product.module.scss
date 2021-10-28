@@ -10,40 +10,73 @@
   flex-direction: column;
   align-items: center;
 
+  &__backgroundImage {
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    @include height-width(100vh, 100vw);
+    background-image: url("./../../media/mobile_background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-color: $solidGreen;
+  }
+
+  &__sheer {
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    @include height-width(100vh, 100vw);
+    background-color: $sheerGreen;
+  }
+
   &__image {
-    @include height-width(auto, 100vw);
+    box-sizing: border-box;
+    position: fixed;
+    top: 0px;
+    @include height-width(80vh, 100vw);
+    background-color: #c9c9c9;
   }
 
   &__imgWindow {
+    box-sizing: border-box;
     position: fixed;
     top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include height-width(65vh, 100vw);
+    border: 1px solid red;
   }
 
   &__gradient {
-    position: fixed;
-    top: 0px;
+    z-index: 1;
     @include height-width(20vh, 100vw);
-    background-color: $blackGradient;
+    background-image: $blackGradient;
 
     &_2 {
+      
       display: flex;
       align-items: flex-end;
-      top: 15vh;
       @include height-width(15vh, 100vw);
-      transform: rotate(180deg);
+      background-image: $blackGradient2;
     }
   }
 
   &__title {
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 15px;
     @include font-emphasis($white, 1rem);
   }
 
   &__productInformation {
     position: absolute;
+  }
 
+  &__button {
+    background-color: $button;
+    @include height-width(40px, 100%);
+    @include font-regular($white, 0.8rem);
+    border: none;
+    border-radius: 5px;
   }
 }

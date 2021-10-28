@@ -12,9 +12,9 @@ function App() {
           <Route exact path="/">
               <Home />
           </Route>
-          {/* <Route exact path="/:id">
+          <Route exact path="/product/:id">
               <Product />
-          </Route> */}
+          </Route>
           <Route exact path="/cart">
               <Cart />
           </Route>

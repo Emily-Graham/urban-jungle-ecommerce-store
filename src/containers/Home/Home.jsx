@@ -5,7 +5,6 @@ import Carousel from '../../components/Carousel';
 import SearchBar from "./../../components/SearchBar";
 import ItemGridCards from "./../../components/ItemGridCards";
 import { useState } from "react";
-import { Hashlink, NavHashLink } from "react-router-hash-link";
 
 const Home = () => {
 
@@ -18,13 +17,9 @@ const Home = () => {
 
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        console.log(`scrolling down!`);
-        console.log(window.scrollY);
         setIsInvisible(false);
       } else {
-        console.log(`scrolling up!`);
         setIsInvisible(true);
-        console.log(window.scrollY);
       }
     };
     

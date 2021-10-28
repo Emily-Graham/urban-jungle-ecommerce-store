@@ -1,28 +1,56 @@
 import styles from './Product.module.scss';
 import NavBar from '../../components/NavBar';
-import ProductInformation from "./../../components/ProductInformation";
+// import ProductInformation from "./../../components/ProductInformation";
+import { useParams } from 'react-router';
+import { favouriteFalse, favouriteTrue } from '../../media/icons';
 
 const Product = () => {
 
+  const parameter = useParams();
+
   //use id params and asyngh/await to fetch data:
   const name = "Product Name Here";
-  const image = "Image url here";
-
-  const gClasses = [styles.Product__gradient, styles.Product__gradient_2]
+  const price = "37.20";
+  const favourite = true;
+  const image = "image";
+  const productId = "22";
+  const productStatus = "SALE";
+  const size = "23cm";
+  const description = "yup yup";
+  const displayPrice = `$${ price }`;
+  const favouriteIcon = favourite ? favouriteTrue : favouriteFalse;
 
   return (
     <div>
-      <img href={ image } className={ styles.Product__image }/>
+      <div className={ styles.Product__backgroundImage }></div>
+      <div id="sheer" className={ styles.Product__sheer }></div>
+
+      <img src={ image } className={ styles.Product__image } alt="" />
+
       <div id="productImgWindow" className={ styles.Product__imgWindow }>
+
         <div id="productGradient" className={ styles.Product__gradient }></div>
-        <NavBar />
-        <div id="productGradient2" className={ gClasses.join(" ") }>
+
+        <div id="productGradient2" className={ styles.Product__gradient_2 }>
           <h1 className={ styles.Product__title }>
             { name }
           </h1>
         </div>
+
       </div>
-      <ProductInformation className={ styles.Product__productInformation }/> 
+
+      <NavBar id={ productId }/>
+
+      <div id="productInformation">
+        <p>{ productStatus }</p>
+        <p>{ size }</p>
+        <p>{ description }</p>
+        <span>
+          <p>{ displayPrice }</p>
+          { favouriteIcon }
+          <button className={ styles.Product__button }>Add to Cart</button>
+        </span>
+      </div> 
     </div>
   )
 }
