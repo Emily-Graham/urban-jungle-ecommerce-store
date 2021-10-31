@@ -1,0 +1,7 @@
+@import "./../../sassStyles/mixins";
+@import "./../../sassStyles/mediaQueries";
+
+.SimilarImg {
+  @include height-width(100%, auto);
+  border-radius: 5px;
+}

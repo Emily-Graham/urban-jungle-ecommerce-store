@@ -1,0 +1,80 @@
+@import "./../../sassStyles/mediaQueries";
+@import "./../../sassStyles//mixins";
+@import "./../../sassStyles/palette";
+@import "./../../sassStyles/variables";
+@import "./../../sassStyles/typography";
+
+.ItemGridCards {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0px 0px 10px 0px;
+  @include height-width(110px, 100%);
+  border: 1px solid $cardBorder;
+  border-radius: 5px;
+  box-shadow:2px, 4px, 4px $cardBorder;
+  -moz-box-shadow: 2px 3px 4px $cardBorder;
+  -webkit-box-shadow: 2px 3px 4px $cardBorder;
+  text-decoration: none;
+
+  &__image {
+    border-radius: 5px 0px 0px 5px;
+    @include height-width(100%, 110px);
+  }
+
+  &__favIcon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__descContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    @include height-width(100%, 100%);
+  }
+
+  &__name {
+    margin: 0px;
+    @include font-emphasis($black, 1rem);
+  }
+
+  &__text {
+    margin: 0px;
+    @include font-regular($black, 0.8rem);
+  }
+
+  &__price {
+    margin: 0px;
+    @include font-emphasis($black, 1.2rem);
+  }
+
+  &__spanBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+  }
+
+  &__buttonBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    background-color: $button;
+    margin: 0px 0px 0px 10px;
+    @include height-width(20px, 100px);
+    @include font-regular($white, 0.8rem);
+    border: none;
+    border-radius: 5px;
+  }
+}

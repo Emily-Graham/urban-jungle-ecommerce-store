@@ -14,16 +14,18 @@ const CartItem = ({ name, quantity, price, status, thumbnail, totalItemPrice }) 
 
       <img href={ thumbnail } className={ styles.CartItem__image }/>
 
-      <p className={ styles.CartItem__name }>{ name }</p>
+      <div className={ styles.CartItem__textContainer }>
+        <p className={ styles.CartItem__name }>{ name }</p>
 
-      <div className={ styles.CartItem__qtyContainer }>
-        { cartQty }
-      </div>
+        <div className={ styles.CartItem__qtyContainer }>
+          { cartQty }
+        </div>
 
-      <div>
-        { totalItemPrice }
+        <div>
+          { totalItemPrice }
+        </div>
+        
       </div>
-      
     </div>
   )
 }

@@ -6,10 +6,7 @@ import { store_outline, store, cart_outline, cart, return_arrow } from "./../../
 const NavBar = ({ id }) => {
 
   const path = window.location.pathname;
-  console.log("PATH", path); //delete later
   const hash = window.location.hash;
-  console.log("HASH", `.${hash}.`); //delete later
-  console.log(`/product/${id}`);
 
   let left = "Home";
   let leftLink = "/#";

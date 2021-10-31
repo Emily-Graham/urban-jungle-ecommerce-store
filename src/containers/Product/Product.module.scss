@@ -47,7 +47,6 @@
     flex-direction: column;
     justify-content: space-between;
     @include height-width(65vh, 100vw);
-    border: 1px solid red;
   }
 
   &__gradient {
@@ -71,6 +70,9 @@
   &__productInformation {
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 15px;
     @include height-width(22vh, 100vw);
     background-color: $white;
@@ -83,6 +85,9 @@
   &__text {
     margin: 5px 0px 0px 0px;
     @include font-regular($black, 0.8rem);
+    &_white {
+      @include font-regular($white, 0.8rem);
+    }
   }
 
   &__price {
@@ -99,8 +104,10 @@
 
   &__buttonBar {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     align-items: center;
+    
   }
 
   &__button {
@@ -110,5 +117,23 @@
     @include font-regular($white, 0.8rem);
     border: none;
     border-radius: 5px;
+  }
+
+  &__favButton {
+    display: flex;
+    align-content: center;
+    background-color: transparent;
+    margin: 0px;
+    @include font-regular($white, 0.8rem);
+    border: none;
+    border-radius: 5px;
+  }
+
+  &__similarContainer {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    @include height-width(13vh, 100vw);
   }
 }

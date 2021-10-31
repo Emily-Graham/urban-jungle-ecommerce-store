@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Feature_title.module.scss";
+import styles from "./FeatureTitle.module.scss";
 import { useState } from "react";
 
-const Feature_title = () => {
+const FeatureTitle = () => {
 
   const [titleLarge, setTitleLarge] = useState(true);
 
@@ -58,4 +58,4 @@ const Feature_title = () => {
   )
 }
 
-export default Feature_title;
+export default FeatureTitle;
