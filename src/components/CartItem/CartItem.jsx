@@ -1,16 +1,30 @@
 import styles from './CartItem.module.scss';
-import { useState } from 'react';
+import { addButton, subtractButton } from '../../media/icons';
+import { useState, useEffect } from 'react';
 
-const CartItem = ({ name, quantity, price, thumbnail, sendTotalItemPrice }) => {
-
+const CartItem = ({ name, quantity, price, thumbnail, totalCartPrice, setTotalCartPrice }) => {
   const [cartQty, setCartQty] = useState(1);
+  useEffect(()=>{
+    setTotalCartPrice(totalCartPrice => totalCartPrice = totalCartPrice + price);console.log("PRICE", totalCartPrice);
+  }, [])
+  
+
   //total item price
   const totalItemPrice=(price*cartQty).toFixed(2);
 
-  //should not exceed item quantity
-
-  
-  //useState to watch changing qty 
+  //totalCartPrice increments with change in cartQty
+  const incrementTotal = () => {
+    if ( cartQty < quantity ) {
+      setCartQty(cartQty + 1);
+    setTotalCartPrice(totalCartPrice + price);
+    }
+  }
+  const decrementTotal = () => {
+    if ( cartQty > 0 ){
+      setCartQty(cartQty - 1);
+      setTotalCartPrice(totalCartPrice - price);
+    }
+  }
 
   return (
     <div className={ styles.CartItem__container }>
@@ -20,10 +34,10 @@ const CartItem = ({ name, quantity, price, thumbnail, sendTotalItemPrice }) => {
       <div className={ styles.CartItem__textContainer }>
         <p className={ styles.CartItem__name }>{ name }</p>
 
-        <div>
-          <div className={ styles.CartItem__qtyContainer }>
-            { cartQty }
-          </div>
+        <div className={ styles.CartItem__qtyContainer }>
+          <button className={ styles.CartItem__button} onClick={ decrementTotal }>{ subtractButton }</button> 
+          { cartQty }
+          <button className={ styles.CartItem__button} onClick={ incrementTotal }>{ addButton }</button>
         </div>
 
         <div className={ styles.CartItem__itemPrice}>

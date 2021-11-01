@@ -7,6 +7,7 @@ import { findCartPlants } from '../../services/products';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState(null);
+  const [totalCartPrice, setTotalCartPrice] = useState(0);
 
   //get data from firestore
   useEffect(() => {
@@ -19,10 +20,6 @@ const Cart = () => {
 
   //if more than 4 cart items, hide carousel
   const favClasses = [ styles.Cart__favBar ];
-
-  //fix correct values
-  const totalCartPrice = "$101.60";
-  const priceTally = [styles.Cart__tallySection, styles.Cart__tallySection_price].join(" ");
 
   return (
     <div className={ styles.Cart }>
@@ -45,6 +42,8 @@ const Cart = () => {
                 price={ item.price }
                 quantity={ item.quantity }
                 thumbnail={ item.thumbnail }
+                totalCartPrice={ totalCartPrice }
+                setTotalCartPrice={ setTotalCartPrice }
               />
             })}
         </div>
@@ -54,11 +53,9 @@ const Cart = () => {
             <div type="text" className={ styles.Cart__couponInput }>Coupon Code</div>
             <button className={ styles.Cart__couponButton }>Apply</button>
           </form>
-          <div className={ priceTally }><p className={ styles.Cart__tallySection_shipping }>Shipping:</p><p className={ styles.Cart__tallySection_shipping }>$9.50</p></div>
-          <div className={ priceTally }><p className={ styles.Cart__tallySection_total }>Total:</p><p className={ styles.Cart__tallySection_total }>{ totalCartPrice }</p></div>
+          <div className={ styles.Cart__tallySection_price }><p className={ styles.Cart__tallySection_shipping }>Shipping:</p><p className={ styles.Cart__tallySection_shipping }>$9.50</p></div>
+          <div className={ styles.Cart__tallySection_price }><p className={ styles.Cart__tallySection_total }>Total:</p><p className={ styles.Cart__tallySection_total }>{ `$${totalCartPrice.toFixed(2)}` }</p></div>
           <button className={ styles.Cart__purchaseButton }>Purchase</button>
-          
-
         </div>
       </div>
 

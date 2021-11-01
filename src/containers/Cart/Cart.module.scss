@@ -80,10 +80,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     width: 100%;
 
     &_price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin: 0px 0px 5px 0px;
       border-bottom: 1px solid $white;
     }

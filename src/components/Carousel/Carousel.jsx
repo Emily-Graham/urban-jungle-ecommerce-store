@@ -25,7 +25,6 @@ const Carousel = () => {
     const gatherCaroItems = async () => {
       const data = await findStatusPlants();
       setCaroItems(data);
-      console.log(data);
     }
     gatherCaroItems();
   }, []);

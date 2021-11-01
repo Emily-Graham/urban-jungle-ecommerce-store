@@ -41,7 +41,16 @@
   }
 
   &__qtyContainer {
-    @include font-regular($black, 0.8rem);
+    display: flex;
+    @include font-regular($white, 0.8rem);
+    background-color: $button;
+    border-radius: 5px;
+  }
+
+  &__button {
+    @include height-width(20px, 100%);
+    border: none;
+    background-color: transparent;
     border-radius: 5px;
   }
 
