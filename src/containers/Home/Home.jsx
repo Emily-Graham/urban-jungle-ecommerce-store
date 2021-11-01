@@ -20,8 +20,6 @@ const Home = () => {
       setPlants(data);
     }
     gatherProducts();
-    //get cart plants
-    console.log(findCartPlants());
   }, []);
 
   //scroll position styling
@@ -73,6 +71,7 @@ const Home = () => {
                 price={ plant.price }
                 favourite={ plant.favourite }
                 cart={ plant.cart }
+                thumbnail={ plant.thumbnail }
               />
             })}
           </div>

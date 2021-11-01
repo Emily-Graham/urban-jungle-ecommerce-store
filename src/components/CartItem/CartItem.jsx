@@ -1,28 +1,33 @@
 import styles from './CartItem.module.scss';
+import { useState } from 'react';
 
-const CartItem = ({ name, quantity, price, status, thumbnail, totalItemPrice }) => {
+const CartItem = ({ name, quantity, price, thumbnail, sendTotalItemPrice }) => {
+
+  const [cartQty, setCartQty] = useState(1);
+  //total item price
+  const totalItemPrice=(price*cartQty).toFixed(2);
 
   //should not exceed item quantity
-  let cartQty;
 
-  //display total price
   
   //useState to watch changing qty 
 
   return (
     <div className={ styles.CartItem__container }>
 
-      <img href={ thumbnail } className={ styles.CartItem__image }/>
+      <img src={ thumbnail } className={ styles.CartItem__image }/>
 
       <div className={ styles.CartItem__textContainer }>
         <p className={ styles.CartItem__name }>{ name }</p>
 
-        <div className={ styles.CartItem__qtyContainer }>
-          { cartQty }
+        <div>
+          <div className={ styles.CartItem__qtyContainer }>
+            { cartQty }
+          </div>
         </div>
 
-        <div>
-          { totalItemPrice }
+        <div className={ styles.CartItem__itemPrice}>
+          { `$${ totalItemPrice }` }
         </div>
         
       </div>

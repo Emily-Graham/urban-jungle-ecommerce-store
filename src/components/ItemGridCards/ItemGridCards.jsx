@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { updatePlant } from "./../../services/products";
 
-const ItemGridCards = ({ name, size, light, price, favourite, id, cart }) => {
+const ItemGridCards = ({ name, size, light, price, favourite, id, cart, thumbnail }) => {
 
   const [favValue, SetFavValue ] = useState(favourite);
 
@@ -18,7 +18,7 @@ const ItemGridCards = ({ name, size, light, price, favourite, id, cart }) => {
 
   return (
     <Link to={ `/product/${id}` } className={ styles.ItemGridCards }>
-      <img src={ "" } className={ styles.ItemGridCards__image } alt="" />
+      <img src={ thumbnail } className={ styles.ItemGridCards__image } alt="" />
 
       <button className={ styles.ItemGridCards__favIcon } onClick={ toggleFav }>{ favouriteIcon }</button>
 
@@ -30,7 +30,7 @@ const ItemGridCards = ({ name, size, light, price, favourite, id, cart }) => {
           <p className={ styles.ItemGridCards__text }>{ light }</p>
         </div>
         <span className={ styles.ItemGridCards__spanBar }>
-          <p className={ styles.ItemGridCards__price }>{ `$${price}` }</p>
+          <p className={ styles.ItemGridCards__price }>{ `$${price.toFixed(2)}` }</p>
           <button className={ styles.ItemGridCards__button }>{ cart && cart ? "Delete in Cart": "Add to Cart" }</button> 
         </span>
       </div>

@@ -47,12 +47,16 @@
     max-height: 90vh;
     @include height-width(65vh, 100vw);
     background-color: $sheerWhite;
-    border: 1px solid blue;
+    // border: 1px solid blue;
   }
 
   &__items {
-    @include height-width(35vh, 100%);
-    border: 1px solid purple;
+    @include height-width(40vh, 100%);
+    // border: 1px solid purple;
+
+    &_extended {
+      @include height-width(40vh, 100%);
+    }
   }
 
   &__title {
@@ -132,6 +136,7 @@
     padding: 0px 0px 15px 0px;
     @include height-width(25vh, 100vw);
     @include font-regular($white, 0.8rem);
+    overflow: hidden;
 
     &_heading {
       margin: 10px 0px;

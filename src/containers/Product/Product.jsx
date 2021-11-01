@@ -45,14 +45,13 @@ const Product = () => {
 
   //mapthrough product similar plants
   const similarSrc= "yep";
-  const image = "image";
  
   return (
     <div>
       <div className={ styles.Product__backgroundImage }></div>
       <div id="sheer" className={ styles.Product__sheer }></div>
 
-      <img src={ plant && image } className={ styles.Product__image } alt="" />
+      <img src={ plant && plant.image } className={ styles.Product__image } alt="" />
 
       <div id="productImgWindow" className={ styles.Product__imgWindow }>
 
@@ -73,7 +72,7 @@ const Product = () => {
         <p className={ styles.Product__text }>{ `Size: ${plant && plant.size}` }</p>
         <p className={ styles.Product__text }>{ plant && plant.description }</p>
         <span className={ styles.Product__spanBar }>
-          <p className={ styles.Product__price }>{ `$${ plant && plant.price }` }</p>
+          <p className={ styles.Product__price }>{ `$${ plant && plant.price.toFixed(2) }` }</p>
           <div className={ styles.Product__buttonBar } >
 
             <button className={ styles.Product__favButton} onClick={ toggleFav }>{ plant && plant.favourite ? favouriteTrue : favouriteFalse }</button>

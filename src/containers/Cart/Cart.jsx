@@ -3,32 +3,25 @@ import NavBar from '../../components/NavBar';
 import Carousel from "./../../components/Carousel";
 import CartItem from "./../../components/CartItem";
 import { useState, useEffect } from "react";
-import { getProducts } from '../../services/products';
+import { findCartPlants } from '../../services/products';
 
 const Cart = () => {
-
-  const [plants, setPlants] = useState(null);
   const [cartItems, setCartItems] = useState(null);
 
   //get data from firestore
   useEffect(() => {
-    const gatherProducts = async () => {
-      const data = await getProducts();
-      setPlants(data);
+    const gatherCartItems = async () => {
+      const data = await findCartPlants();
+      setCartItems(data);
     }
-    gatherProducts();
-    console.log(plants.cart);
+    gatherCartItems();
   }, []);
-
-  const cartItemArr=[];
-  
 
   //if more than 4 cart items, hide carousel
   const favClasses = [ styles.Cart__favBar ];
 
   //fix correct values
   const totalCartPrice = "$101.60";
-  const totalItemPrice = "cartQty*price";
   const priceTally = [styles.Cart__tallySection, styles.Cart__tallySection_price].join(" ");
 
   return (
@@ -45,20 +38,15 @@ const Cart = () => {
       <div id="cartItemContainer" className={ styles.Cart__ItemContainer }>
         
         <div id="cartItems" className={ styles.Cart__items }>
-          {/* map cart items here */}
-          {/* { cartItems && cartItems.map((item) => {
+          { cartItems && cartItems.map((item) => {
               return <CartItem 
-                key={ plant.id }
-                id={ plant.id }
-                name={ plant.name }
-                size={ plant.size }
-                light={ plant.light }
-                price={ plant.price }
-                favourite={ plant.favourite }
-                cart={ plant.cart }
-                totalItemPrice={ totalItemPrice }
+                key={ item.id }
+                name={ item.name }
+                price={ item.price }
+                quantity={ item.quantity }
+                thumbnail={ item.thumbnail }
               />
-            })} */}
+            })}
         </div>
 
         <div id="tallyContainer" className={ styles.Cart__tallyContainer } > 
