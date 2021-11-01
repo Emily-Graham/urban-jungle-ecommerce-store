@@ -31,6 +31,6 @@ Personal stretch goals:
 
 Figma design: <a href="https://www.figma.com/file/6PliGo7Fsbq3WmCP95dMrm/Urban-Jungle?node-id=0%3A1">here</a>.
 
-icons by ionic, licensed under CC4, sourced: <a href="https://ionic.io/ionicons">here</>. 
+icons by ionic, licensed under CC4, sourced: <a href="https://ionic.io/ionicons">here</a>. 
 
-carousel by Slick, react compatibilty sourced: <a href="https://github.com/akiran/react-slick">here</>. 
+Carousel by Slick, react compatibilty sourced: <a href="https://github.com/akiran/react-slick">here</a>. 
