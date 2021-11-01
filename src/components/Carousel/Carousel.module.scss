@@ -3,6 +3,10 @@
 @import "./../../sassStyles/mediaQueries";
 @import "./../../sassStyles/typography";
 
+.slick-slider {
+  overflow: hidden !important;
+}
+
 .Carousel {
   box-sizing: border-box;
   position: absolute;
