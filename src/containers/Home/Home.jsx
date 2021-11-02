@@ -4,7 +4,6 @@ import FeatureTitle from "../../media/FeatureTitle.jsx";
 import Carousel from '../../components/Carousel';
 import SearchBar from "./../../components/SearchBar";
 import ItemGridCards from "./../../components/ItemGridCards";
-
 import { useState } from "react";
 import { useEffect } from "react";
 import { findCartPlants, getProducts } from '../../services/products';

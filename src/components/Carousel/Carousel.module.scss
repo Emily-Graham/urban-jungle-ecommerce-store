@@ -3,8 +3,14 @@
 @import "./../../sassStyles/mediaQueries";
 @import "./../../sassStyles/typography";
 
-.slick-slider {
-  overflow: hidden !important;
+.slick-slider{
+  overflow: hidden;
+}
+.slick-list{
+  overflow: hidden;
+}
+.slick-track {
+  overflow: hidden;
 }
 
 .Carousel {
@@ -38,6 +44,12 @@
   &__image {
     @include height-width(23vh, auto);
     border-radius: 5px;
+  }
+
+  &__stamp {
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }
 
   &__price {
